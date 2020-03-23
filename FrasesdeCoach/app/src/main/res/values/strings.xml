@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Frases de Coach</string>
+
+    <string-array name="frases">
+        <item>Se você é uma pessoa sem sorte, quando vir uma luz no fim do túnel, corra!!
+            Pois é um trem.</item>
+        <item>Se alguém lhe jogar uma pedra, seja diferente, jogue um tijolo.</item>
+        <item>Antes de começar, desista.</item>
+        <item>O não você já tem, bora buscar a humilhação.</item>
+        <item>Se zona de corforto fosse ruim, não se chamaria zona de conforto.</item>
+        <item>A morte é inevitável.</item>
+    </string-array>
+</resources>
