@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Comparador de com.Ap1.comparadordecerveja.Cerveja</string>
     <string-array name="marca" >
         <item>ANTARCTICA</item>
         <item>AMSTEL</item>

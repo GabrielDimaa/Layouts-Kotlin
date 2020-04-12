@@ -3,8 +3,8 @@ package com.Ap1.comparadordecerveja
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,12 +36,7 @@ class MainActivity : AppCompatActivity() {
         btnComparar.setOnClickListener(View.OnClickListener {
             val volume = spinner_volume.getSelectedItem().toString().toDouble()
             val marca = spinner_marca.getSelectedItem().toString()
-            val valor = calcular(volume)
-
-            val cerveja = Cerveja(marca, volume, valor)
-
-            selecionar(cerveja)
-
+            calcular(volume, marca, volume)
         })
 
         btnLimpar.setOnClickListener(View.OnClickListener {
@@ -50,10 +45,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calcular(volume: Double) : Double {
-        val valor = Valor.text.toString().toDouble()
-        val resultado = volume / valor
-        return resultado
+    fun calcular(volume: Double, marca: String, volume1: Double) {
+        if(Valor.text.toString().length == 0) {
+            Toast.makeText(applicationContext, "Digite um Valor", Toast.LENGTH_SHORT).show()
+        } else {
+            val valor = Valor.text.toString().toDouble()
+            val resultado = volume / valor
+
+            val cerveja = Cerveja(marca, volume, resultado)
+            selecionar(cerveja)
+        }
     }
 
     fun excluir(view: View) {
@@ -66,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         val aux = mutableListOf<Double>()
         val aux3 = mutableListOf<Cerveja>()
         val aux2 = this.lista
-
 
         for((index, item) in this.lista.withIndex()) {
             aux.add(index, item.preco)
@@ -81,12 +81,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         exibir(aux3)
+        Valor.text.clear()
     }
 
     fun exibir(aux3: MutableList<Cerveja>) {
         ViewResultado.setText("")
         for((index, item) in aux3.withIndex()) {
-
             ViewResultado.append("\n ${index + 1}º.  ${item.marca} - ${item.volume}ml \n")
         }
     }

@@ -18,11 +18,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@null"
             app:srcCompat="@drawable/logo" />
 
         <Spinner
             android:id="@+id/spinner_marca"
             android:layout_width="160dp"
+            android:contentDescription="Selecione a cerveja"
             android:layout_height="54dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="16dp"
@@ -35,6 +37,7 @@
 
         <Spinner
             android:id="@+id/spinner_volume"
+            android:contentDescription="Selecione o volume em ml"
             android:layout_width="118dp"
             android:layout_height="53dp"
             android:layout_marginTop="16dp"
@@ -69,7 +72,8 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="96dp"
             android:ems="10"
-            android:hint="Preço..."
+            android:hint="0.00"
+            android:contentDescription="Digite o valor em reais"
             android:inputType="numberDecimal"
             android:fontFamily="@font/merriweather_light"
             android:textAlignment="center"
@@ -85,6 +89,7 @@
             android:layout_marginStart="108dp"
             android:layout_marginTop="40dp"
             android:text="Preço: R$"
+            android:contentDescription="Preço"
             android:textAlignment="textEnd"
             android:textSize="18sp"
             android:textColor="#000000"
@@ -108,6 +113,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btnLimpar"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="Comparar cerveja"
             app:layout_constraintTop_toBottomOf="@+id/Valor" />
 
         <Button
@@ -122,6 +128,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/btnComparar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:contentDescription="Limpar lista de cervejas"
             app:layout_constraintStart_toEndOf="@+id/btnComparar" />
 
         <TextView
@@ -131,6 +138,7 @@
             android:layout_marginTop="48dp"
             android:fontFamily="@font/merriweather_light"
             android:textAlignment="viewStart"
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageView3"
